@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "http://104.248.169.15/trainline-hackathon-server/:path*"
+    }
+  ]
+}
