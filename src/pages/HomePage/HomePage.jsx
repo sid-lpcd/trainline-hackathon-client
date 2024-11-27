@@ -5,7 +5,7 @@ import { apiHandler } from "../../utils/apiUtils.mjs";
 import "./HomePage.scss";
 
 const HomePage = ({ isFilterOpen, setIsFilterOpen }) => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
   const navigate = useNavigate();
 
   const initialRender = async () => {};
