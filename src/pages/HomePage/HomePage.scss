@@ -1,0 +1,14 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+main {
+  &[class*="filter-open"] {
+    @include desktop {
+      width: 75vw;
+
+      & .image-card-link {
+        width: calc(100% / 2 - $margin-tablet/2);
+      }
+    }
+  }
+}
