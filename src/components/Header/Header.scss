@@ -6,50 +6,17 @@
   padding-bottom: calc($min-padding * 3);
   @include flex(space-between);
 
-  &__logo {
-    padding: unset;
-  }
-
-  &__filter-btn {
-    padding: $min-padding calc($min-padding * 2);
-    @include flex(center);
-    color: $primary-accent-color;
-    background-color: $primary-background-color;
-    border: 2px solid $primary-accent-color;
-    border-radius: 20% / 50%;
-    opacity: 1;
-
+  &__mobile {
+    width: 50%;
+    @include flex(space-between);
     @include tablet {
-      padding: 0.6875rem 1.375rem;
-    }
-
-    &--active {
-      background-color: $primary-accent-color;
-      color: $secondary-color;
-
-      @include desktop {
-        opacity: 0;
-      }
-
-      & path {
-        fill: $secondary-color;
-      }
+      display: none;
     }
   }
-
-  &__filter-icon {
-    width: 1.5625rem;
-    height: 0.9375rem;
-    padding-left: $min-padding;
-  }
-
-  &__nav-link-home {
-    @include flex(start);
-    gap: $min-padding;
-  }
-
-  &__home {
-    padding: 0;
-    color: $primary-accent-color;
+  &__desktop {
+    display: none;
+    @include tablet {
+      display: unset;
+    }
   }
 }
