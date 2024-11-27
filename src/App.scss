@@ -119,19 +119,19 @@ body,
   }
 }
 
-.loader-overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0.5;
-  z-index: 999999;
+.loading {
+  &-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $primary-brand-color;
+    z-index: 999999;
+    @include flex(center);
 
-  & > * {
-    position: relative;
-    left: calc(50% - $loader-width/2);
-    top: 50%;
+    & svg {
+      fill: $primary-background-color;
+    }
   }
 }
