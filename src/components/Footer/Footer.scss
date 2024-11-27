@@ -2,72 +2,47 @@
 @use "../../styles/partials/variables" as *;
 
 .footer {
-  padding-top: $min-padding;
-  padding-bottom: $min-padding;
-  width: 100%;
-  @include tablet {
-    padding-top: calc($min-padding * 3);
+  @include desktop {
+    max-width: 1280px;
+    margin: auto;
   }
-
-  &--filter-open {
-    @include desktop {
-      width: 75vw;
-    }
-  }
-
-  &__top {
-    @include tablet {
-      @include flex(space-between, start);
-      min-height: 30vh;
-    }
-
-    @include desktop {
-    }
-  }
-
-  &__logo {
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 400;
-    @include tablet {
-      padding: 0;
-      flex-grow: 7;
-    }
-
-    @include desktop {
-    }
-  }
-  &__section {
-    padding: $min-padding 0;
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 1.5rem;
 
     @include tablet {
-      flex-grow: 1;
+      max-width: 500px;
+      margin: auto;
     }
 
-    @include desktop {
-    }
-  }
-  &__text {
-    padding-bottom: calc($min-padding/2);
-  }
-
-  &__icons {
-    padding: 0.5rem 0;
-    @include flex(start);
-    gap: $min-padding;
-    @include desktop {
+    &-socials {
       display: none;
-    }
-    &--desktop {
-      display: none;
-      @include desktop {
+
+      @include tablet {
         display: flex;
+        gap: 0.5rem;
       }
     }
+
+    &-credentials {
+      display: flex;
+      gap: 1rem;
+    }
   }
-  &__copywrite {
-    @include flex(start);
-    gap: calc($min-padding * 2);
-    color: $primary-optional-color;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    color: #5b6466;
+    line-height: 1rem;
+    margin: 1rem;
+    &-copyright {
+      width: 100%;
+    }
   }
 }
