@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Navigation />
     </>
   );
 }
