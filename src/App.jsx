@@ -5,19 +5,19 @@ import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Navigation";
+import ExplorePage from "./pages/ExplorePage/ExplorePage";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Header />
-      <main>
+      <div className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/explore" element={<ExplorePage />} />
         </Routes>
-      </main>
-      <Footer />
+      </div>
       <Navigation />
     </>
   );
