@@ -1,0 +1,21 @@
+.header {
+  padding: 0;
+  margin: 0;
+  &__payment {
+    width: 425px;
+  }
+}
+
+.main {
+  position: absolute;
+}
+
+.applepay {
+  z-index: 99;
+  width: 425px;
+  height: 60px;
+  border: none;
+  background: none;
+  position: relative;
+  top: 1840px;
+}
