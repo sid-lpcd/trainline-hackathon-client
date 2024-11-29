@@ -1,4 +1,4 @@
-import screen from "../../assets/images/SearchScreen.jpeg";
+import screen from "../../assets/images/SearchScreen.jpg";
 import "./SearchPage.scss";
 import { Link } from "react-router-dom";
 

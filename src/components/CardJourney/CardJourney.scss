@@ -1,0 +1,65 @@
+@use "../../styles/partials/variables" as *;
+
+.destination {
+  &__title {
+    color: $primary-font-color;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.card {
+  border: 1px solid $border-secondary-color;
+  border-radius: 5px;
+  background-color: $primary-background-color;
+  width: 100%;
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-secondary-color;
+    padding: 1.3125rem 1rem;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    align-items: center;
+
+    &-transport {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+  }
+
+  &__price {
+    height: 1.5rem;
+  }
+
+  &__button {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background-color: $secondary-button-background;
+    color: $secondary-color;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
