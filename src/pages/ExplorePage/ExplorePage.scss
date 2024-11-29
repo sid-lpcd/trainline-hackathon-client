@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.explore {
+  &-header {
+    background-color: $nav-active-color;
+    padding-top: 1rem;
+    @include flex(center);
+
+    &__title {
+      color: $secondary-color;
+    }
+  }
+  &-feed {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
