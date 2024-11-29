@@ -6,7 +6,7 @@
     "author": "Juan",
     "short_description": "Visiting Venice was magical. Even alone, I loved it.",
     "description": "Stroll through Venice's iconic canals and romantic atmosphere.",
-    "category": "Solo Travel",
+    "category": ["Solo Travel", "Couples"],
     "favourite": true
   },
   {
@@ -16,7 +16,7 @@
     "author": "Viv",
     "short_description": "Finally made it to Edinburgh, and it’s just as beautiful as I remember.",
     "description": "Experience Edinburgh's historic castles and vibrant festivals.",
-    "category": "Social Travel",
+    "category": ["Social Travel", "Family Travel"],
     "favourite": false
   },
   {
@@ -26,7 +26,7 @@
     "author": "Viv",
     "short_description": "Exploring Poland was amazing—beautiful architecture and vibrant culture.",
     "description": "Admire Warsaw’s rich history and cultural vibrancy.",
-    "category": "Couples",
+    "category": ["Couples", "Social Travel"],
     "favourite": false
   },
   {
@@ -36,7 +36,7 @@
     "author": "Hans Müller",
     "short_description": "Met some wonderful people in Oslo and had a great time.",
     "description": "Explore Oslo's modern design and Nordic landscapes.",
-    "category": "Solo Travel",
+    "category": ["Solo Travel", "Social Travel"],
     "favourite": false
   },
   {
@@ -46,7 +46,7 @@
     "author": "Jan Novák",
     "short_description": "Experience the magic of Prague’s Old Town.",
     "description": "Wander through Prague's medieval streets and historic charm.",
-    "category": "Solo Travel",
+    "category": ["Solo Travel", "Couples"],
     "favourite": false
   },
   {
@@ -56,7 +56,7 @@
     "author": "Carlos García",
     "short_description": "Admire Gaudi’s masterpieces and Mediterranean vibes.",
     "description": "Immerse yourself in Barcelona's art, architecture, and beaches.",
-    "category": "Social Travel",
+    "category": ["Social Travel", "Couples"],
     "favourite": false
   },
   {
@@ -66,7 +66,7 @@
     "author": "Emily Johnson",
     "short_description": "Experience iconic landmarks and bustling streets.",
     "description": "Discover London's famous sites and cultural landmarks.",
-    "category": "Family Travel",
+    "category": ["Family Travel", "Social Travel"],
     "favourite": false
   },
   {
@@ -76,7 +76,7 @@
     "author": "Pieter de Vries",
     "short_description": "Cycle through picturesque canals and tulip fields.",
     "description": "Enjoy Amsterdam’s unique charm and artistic heritage.",
-    "category": "Solo Travel",
+    "category": ["Solo Travel", "Couples"],
     "favourite": false
   },
   {
@@ -86,7 +86,7 @@
     "author": "Anna Huber",
     "short_description": "Uncover Vienna’s imperial elegance and classical music.",
     "description": "Experience Vienna's grand palaces and musical traditions.",
-    "category": "Couples",
+    "category": ["Couples", "Solo Travel"],
     "favourite": false
   }
 ]

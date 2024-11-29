@@ -30,13 +30,44 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    &-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+    &-container {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
+    }
+    &-item {
+      padding: 0.125rem 1rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      @include flex(center);
+      border-radius: 5px;
+      border: 2px solid $border-secondary-color;
+
+      &--active {
+        border: 2px solid $nav-active-color;
+        color: $nav-active-color;
+      }
+    }
   }
 
   &__sub-row {
     @include flex(space-between);
-  }
-
-  &__likes {
   }
 
   &__icon {

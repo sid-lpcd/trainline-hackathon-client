@@ -1,0 +1,29 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.explore {
+  &-header {
+    position: relative;
+    background-color: $nav-active-color;
+    padding: 3.25rem 1.0625rem 0.875rem;
+    @include flex(start, end);
+    &__title {
+      position: absolute;
+      width: calc(100vw - 2rem);
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $secondary-color;
+      margin: 0;
+      padding: 0;
+    }
+    &__cancel {
+      z-index: 1;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $secondary-color;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

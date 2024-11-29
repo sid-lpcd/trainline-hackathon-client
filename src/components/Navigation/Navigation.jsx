@@ -15,8 +15,8 @@ const Navigation = () => {
         to="/favourites"
         className={`${
           location.pathname === "/favourites"
-            ? "bottom-navigation__item bottom-navigation__item--active"
-            : "bottom-navigation__item"
+            ? "bottom-navigation__item bottom-navigation__item--star bottom-navigation__item--active"
+            : "bottom-navigation__item bottom-navigation__item--star"
         }`}
       >
         <StarIcon className="bottom-navigation__icon" />

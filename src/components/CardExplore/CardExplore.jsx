@@ -4,8 +4,8 @@ import communityProfile from "../../assets/icons/community-profile-icon.png";
 import { Link, useNavigate } from "react-router-dom";
 import "./CardExplore.scss";
 
-const CardExplore = ({ imageCard }) => {
-  const [liked, setLiked] = useState(false);
+const CardExplore = ({ imageCard, isIndividual }) => {
+  const [liked, setLiked] = useState(imageCard.favourite);
 
   const toggleLike = () => setLiked((prevLiked) => !prevLiked);
 
@@ -31,6 +31,7 @@ const CardExplore = ({ imageCard }) => {
             onClick={(event) => {
               event.stopPropagation();
               toggleLike();
+              imageCard.favourite = !imageCard.favourite;
             }}
             className="image-card__likes"
           >
@@ -41,9 +42,24 @@ const CardExplore = ({ imageCard }) => {
             )}
           </span>
         </div>
+        {isIndividual && (
+          <div className="image-card__filters-container">
+            {imageCard.category.map((filter, index) => (
+              <p
+                className={`image-card__filters-item image-card__filters-item--active`}
+                key={index}
+                onClick={() => handleFilterClick(filter)}
+              >
+                {filter}
+              </p>
+            ))}
+          </div>
+        )}
         <div className="image-card__details">
           <p className="image-card__description">
-            {imageCard.short_description.length > 40
+            {isIndividual
+              ? imageCard.description
+              : imageCard.short_description.length > 40
               ? `${imageCard.short_description.substring(0, 40)}...`
               : imageCard.short_description}
           </p>
@@ -55,9 +71,11 @@ const CardExplore = ({ imageCard }) => {
             />
             <p className="image-card__author">{imageCard.author}</p>
           </div>
-          <Link to={`/explore/${imageCard.id}`} className="image-card__more">
-            View more
-          </Link>
+          {!isIndividual && (
+            <Link to={`/explore/${imageCard.id}`} className="image-card__more">
+              View more
+            </Link>
+          )}
         </div>
       </div>
     </article>

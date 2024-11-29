@@ -8,6 +8,7 @@ import TicketPage from "./pages/TicketPage/TicketPage";
 import SelectionPage from "./pages/SelectionPage/SelectionPage";
 import Navigation from "./components/Navigation/Navigation";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
+import IndividualExplorePage from "./pages/IndividualExplorePage/IndividualExplorePage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/booking" element={<BookingConfirmation />} />
           <Route path="/tickets" element={<TicketPage />} />
           <Route path="/explore" element={<ExplorePage />} />
+          <Route path="/explore/:id" element={<IndividualExplorePage />} />
         </Routes>
       </div>
       <Navigation />
