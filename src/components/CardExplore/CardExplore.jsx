@@ -1,14 +1,20 @@
-import "./CardExplore.scss";
 import { useState } from "react";
-import HeartIcon from "../../assets/icons/heart-icon.svg?react";
-import SaveIcon from "../../assets/icons/save-icon.svg?react";
+import StarIcon from "../../assets/icons/star-icon.svg?react";
 import TrainIcon1 from "../../assets/icons/train-icon-1.svg?react";
 import TrainIcon2 from "../../assets/icons/train-icon-2.svg?react";
 import TrainIcon3 from "../../assets/icons/train-icon-3.svg?react";
 import TrainIcon4 from "../../assets/icons/train-icon-4.svg?react";
 import { useNavigate } from "react-router-dom";
+import "./CardExplore.scss";
 
-const CardExplore = ({ imageSrc, location, thought, stations }) => {
+const CardExplore = ({
+  imageSrc,
+  location,
+  author,
+  thought,
+  travel_dates,
+  stations,
+}) => {
   const [flipped, setFlipped] = useState(false);
   const handleCardClick = () => {
     setFlipped((prevFlipped) => !prevFlipped);
@@ -48,32 +54,32 @@ const CardExplore = ({ imageSrc, location, thought, stations }) => {
                 }}
               >
                 {liked ? (
-                  <HeartIcon className="card-explore__icon card-explore__icon--liked" />
+                  <StarIcon className="card-explore__icon card-explore__icon--liked" />
                 ) : (
-                  <HeartIcon className="card-explore__icon" />
-                )}
-              </span>
-              <span
-                onClick={(event) => {
-                  event.stopPropagation();
-                  toggleSave();
-                }}
-              >
-                {saved ? (
-                  <SaveIcon className="card-explore__icon card-explore__icon--saved" />
-                ) : (
-                  <SaveIcon className="card-explore__icon" />
+                  <StarIcon className="card-explore__icon" />
                 )}
               </span>
             </div>
-            <h3 className="card-explore__location">{location}</h3>
+            <div className="card-explore__header">
+              <h3 className="card-explore__location">{location}</h3>
+              <p className="card-explore__author">{author}</p>
+            </div>
             <p className="card-explore__thought">{thought}</p>
+            <p className="card-explore__more">View more</p>
           </div>
         </div>
         <div className="card-explore__back">
           <h3 className="card-explore__title">
             Hop aboard the <em> Track Pack </em>
           </h3>
+          <div className="card-explore__info">
+            <p className="card-explore__discount">
+              🎉 Discount: Save up to 25%
+            </p>
+            <p className="card-explore__date">
+              📅 Travel Dates: {travel_dates}
+            </p>
+          </div>
           <div className="card-explore__stations">
             {stations.map((station, index) => (
               <div
@@ -85,6 +91,7 @@ const CardExplore = ({ imageSrc, location, thought, stations }) => {
                 }}
               >
                 <h4 className="card-explore__station-name">{station.name}</h4>
+
                 <div>
                   {index === 0 && (
                     <TrainIcon1 className="card-explore__train-icon" />
@@ -100,7 +107,7 @@ const CardExplore = ({ imageSrc, location, thought, stations }) => {
                   )}
                 </div>
                 <p className="card-explore__station-details">
-                  {station.people}/{station.max_group} people joined
+                  Group: {station.people}/{station.max_group}
                 </p>
               </div>
             ))}
