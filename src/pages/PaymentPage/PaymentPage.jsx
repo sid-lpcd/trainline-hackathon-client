@@ -13,15 +13,11 @@ import { useState } from "react";
 
 function PaymentPage() {
   const [interactionsVisible, setInteractionsVisible] = useState(false);
+  const { location } = useParams();
 
   if (interactionsVisible) {
     return <InteractionPrefs setInteractionsVisible={setInteractionsVisible} />;
   }
-
-
-
-function PaymentPage() {
-  const { location } = useParams();
 
   return (
     <>
