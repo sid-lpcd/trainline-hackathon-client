@@ -14,7 +14,7 @@ const Navigation = () => {
       <Link
         to="/favourites"
         className={`${
-          location.pathname === "/favourites"
+          location.pathname.includes("/favourites")
             ? "bottom-navigation__item bottom-navigation__item--star bottom-navigation__item--active"
             : "bottom-navigation__item bottom-navigation__item--star"
         }`}
@@ -36,7 +36,7 @@ const Navigation = () => {
       <Link
         to="/explore"
         className={`${
-          location.pathname === "/explore"
+          location.pathname.includes("/explore")
             ? "bottom-navigation__item bottom-navigation__item--active"
             : "bottom-navigation__item"
         }`}
@@ -47,7 +47,7 @@ const Navigation = () => {
       <Link
         to="/tickets"
         className={`${
-          location.pathname === "/tickets"
+          location.pathname.includes("/tickets")
             ? "bottom-navigation__item bottom-navigation__item--active"
             : "bottom-navigation__item"
         }`}
@@ -58,7 +58,7 @@ const Navigation = () => {
       <Link
         to="/profile"
         className={`${
-          location.pathname === "/profile"
+          location.pathname.includes("/profile")
             ? "bottom-navigation__item bottom-navigation__item--active"
             : "bottom-navigation__item"
         }`}
