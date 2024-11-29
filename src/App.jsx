@@ -19,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<SearchPage />} />
           <Route path="/selection" element={<SelectionPage />} />
-          <Route path="/payment/:location?" element={<PaymentPage />} />
+          {/* <Route path="/selection" element={<SelectionPage />} /> */}
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/booking" element={<BookingConfirmation />} />
           <Route path="/tickets" element={<TicketPage />} />
           <Route path="/explore" element={<ExplorePage />} />

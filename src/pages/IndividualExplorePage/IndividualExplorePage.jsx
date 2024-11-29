@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import trips from "../../data/trips.json";
 import "./IndividualExplorePage.scss";
 import CardExplore from "../../components/CardExplore/CardExplore";
+import CardJourney from "../../components/CardJourney/CardJourney";
 import ArrowIcon from "../../assets/icons/arrow-down-icon.svg?react";
 
 const IndividualExplorePage = () => {
@@ -27,6 +28,20 @@ const IndividualExplorePage = () => {
       </header>
       <main className="explore-feed">
         <CardExplore imageCard={trip} isIndividual={true} />
+        <CardJourney
+          departure_name={"London Euston"}
+          arrival_name={"Edinburgh Waverley"}
+          train_price={"£37"}
+          coach_price={"£18"}
+          travelId={1}
+        />
+        <CardJourney
+          departure_name={"London Euston"}
+          arrival_name={"Glasgow"}
+          train_price={"£40"}
+          coach_price={"£21"}
+          travelId={2}
+        />
 
         <Link
           to="https://www.getyourguide.co.uk/edinburgh-l44/"
