@@ -1,0 +1,16 @@
+.background {
+  width: 425px;
+  position: absolute;
+  z-index: 1;
+  background-image: url(../../assets/images/SearchScreen.jpeg);
+}
+
+.find {
+  width: 425px;
+  height: 60px;
+  z-index: 99;
+  position: relative;
+  top: 550px;
+  border: none;
+  background: none;
+}
