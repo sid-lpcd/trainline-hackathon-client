@@ -1,53 +1,60 @@
 import CardExplore from "../../components/CardExplore/CardExplore";
+import trips from "../../data/trips.json";
+import helpIcon from "../../assets/icons/help-icon.png";
 import "./ExplorePage.scss";
+import { useState } from "react";
 
 const ExplorePage = () => {
-  const cards = [
-    {
-      imageSrc: "https://storage.googleapis.com/pod_public/1300/174593.jpg",
-      location: "Paris, France",
-      author: "James Smith",
-      thought: "The Eiffel Tower looks mesmerizing at night!",
-      travel_dates: "21st - 25th May 2025",
-      stations: [
-        { id: 1, name: "Gare du Nord", people: 25, max_group: 30 },
-        { id: 2, name: "Gare de Lyon", people: 40, max_group: 40 },
-        { id: 3, name: "Saint-Lazare", people: 15, max_group: 30 },
-        { id: 4, name: "Montparnasse", people: 2, max_group: 10 },
-      ],
-    },
-    {
-      imageSrc:
-        "https://thumbs.dreamstime.com/b/vertical-ancient-hub-edinburgh-sunset-vertical-ancient-hub-edinburgh-sunset-263990088.jpg",
-      location: "Edinburgh, Scotland",
-      author: "Jane Doe",
-      thought: "The train ride through the Highlands was magical.",
-      travel_dates: "11st - 13th Dec 2024",
-      stations: [
-        { id: 5, name: "Edinburgh", people: 20, max_group: 30 },
-        { id: 6, name: "Haymarket", people: 10, max_group: 30 },
-        { id: 7, name: "Slateford", people: 5, max_group: 5 },
-        { id: 8, name: "South Gyle", people: 8, max_group: 20 },
-      ],
-    },
-  ];
+  const [selectedTrips, setSelectedTrips] = useState(trips);
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const filters = ["Social Travel", "Solo Travel", "Family Travel", "Couples"];
+
+  const handleFilterClick = (filter) => {
+    if (!selectedFilters.length) {
+      setSelectedTrips(trips);
+    }
+    if (selectedFilters.includes(filter)) {
+      setSelectedFilters(selectedFilters.filter((f) => f !== filter));
+      setSelectedTrips(trips.filter((trip) => !trip.category.includes(filter)));
+    } else {
+      setSelectedFilters([...selectedFilters, filter]);
+      setSelectedTrips(trips.filter((trip) => trip.category.includes(filter)));
+    }
+  };
+
   return (
     <>
       <header className="explore-header">
-        <h1 className="explore-header__title">Explore Destinations</h1>
+        <img src={helpIcon} alt="help icon" className="explore-header__icon" />
+        <h1 className="explore-header__title">Explore</h1>
       </header>
       <main className="explore-feed">
-        {cards.map((card, index) => (
-          <CardExplore
-            key={index}
-            imageSrc={card.imageSrc}
-            location={card.location}
-            thought={card.thought}
-            author={card.author}
-            stations={card.stations}
-            travel_dates={card.travel_dates}
-          />
-        ))}
+        <div className="explore-feed__filters">
+          <h3 className="explore-feed__filters-title">Filters</h3>
+          <div className="explore-feed__filters-container">
+            {filters.map((filter, index) => (
+              <p
+                className={`explore-feed__filters-item${
+                  selectedFilters.includes(filter)
+                    ? " explore-feed__filters-item--active"
+                    : ""
+                }`}
+                key={index}
+                onClick={() => handleFilterClick(filter)}
+              >
+                {filter}
+              </p>
+            ))}
+          </div>
+        </div>
+        {selectedTrips.length ? (
+          selectedTrips.map((trip, index) => (
+            <CardExplore key={index} imageCard={trip} />
+          ))
+        ) : (
+          <p className="explore-feed__no-results">No results found</p>
+        )}
       </main>
     </>
   );

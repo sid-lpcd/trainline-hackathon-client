@@ -1,117 +1,63 @@
 import { useState } from "react";
 import StarIcon from "../../assets/icons/star-icon.svg?react";
-import TrainIcon1 from "../../assets/icons/train-icon-1.svg?react";
-import TrainIcon2 from "../../assets/icons/train-icon-2.svg?react";
-import TrainIcon3 from "../../assets/icons/train-icon-3.svg?react";
-import TrainIcon4 from "../../assets/icons/train-icon-4.svg?react";
-import { useNavigate } from "react-router-dom";
+import communityProfile from "../../assets/icons/community-profile-icon.png";
+import { Link, useNavigate } from "react-router-dom";
 import "./CardExplore.scss";
 
-const CardExplore = ({
-  imageSrc,
-  location,
-  author,
-  thought,
-  travel_dates,
-  stations,
-}) => {
-  const [flipped, setFlipped] = useState(false);
-  const handleCardClick = () => {
-    setFlipped((prevFlipped) => !prevFlipped);
-  };
-
+const CardExplore = ({ imageCard }) => {
   const [liked, setLiked] = useState(false);
-  const [saved, setSaved] = useState(false);
 
   const toggleLike = () => setLiked((prevLiked) => !prevLiked);
-  const toggleSave = () => setSaved((prevSaved) => !prevSaved);
 
   const navigate = useNavigate();
   const handleStationClick = (station) => {
-    navigate(`/?group=${station.id}`);
+    navigate(`/explore/${imageCard.id}`);
   };
 
   return (
-    <article
-      className={`card-explore ${flipped ? "card-explore--flipped" : ""}`}
-      onClick={handleCardClick}
-    >
-      <div className="card-explore__inner">
-        <div className="card-explore__front">
-          <div className="card-explore__image-frame">
-            <img
-              src={imageSrc}
-              alt={`View of ${location}`}
-              className="card-explore__image"
-            />
-          </div>
-          <div className="card-explore__content">
-            <div className="card-explore__actions">
-              <span
-                onClick={(event) => {
-                  event.stopPropagation();
-                  toggleLike();
-                }}
-              >
-                {liked ? (
-                  <StarIcon className="card-explore__icon card-explore__icon--liked" />
-                ) : (
-                  <StarIcon className="card-explore__icon" />
-                )}
-              </span>
-            </div>
-            <div className="card-explore__header">
-              <h3 className="card-explore__location">{location}</h3>
-              <p className="card-explore__author">{author}</p>
-            </div>
-            <p className="card-explore__thought">{thought}</p>
-            <p className="card-explore__more">View more</p>
-          </div>
-        </div>
-        <div className="card-explore__back">
-          <h3 className="card-explore__title">
-            Hop aboard the <em> Track Pack </em>
-          </h3>
-          <div className="card-explore__info">
-            <p className="card-explore__discount">
-              🎉 Discount: Save up to 25%
-            </p>
-            <p className="card-explore__date">
-              📅 Travel Dates: {travel_dates}
-            </p>
-          </div>
-          <div className="card-explore__stations">
-            {stations.map((station, index) => (
-              <div
-                key={index}
-                className="card-explore__station"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  handleStationClick(station);
-                }}
-              >
-                <h4 className="card-explore__station-name">{station.name}</h4>
+    <article className="image-card" onClick={handleStationClick}>
+      <div className="image-card__top">
+        <img
+          src={imageCard.imageSrc}
+          alt={imageCard.short_description}
+          className="image-card__img"
+        />
+      </div>
 
-                <div>
-                  {index === 0 && (
-                    <TrainIcon1 className="card-explore__train-icon" />
-                  )}
-                  {index === 1 && (
-                    <TrainIcon2 className="card-explore__train-icon" />
-                  )}
-                  {index === 2 && (
-                    <TrainIcon3 className="card-explore__train-icon" />
-                  )}
-                  {index === 3 && (
-                    <TrainIcon4 className="card-explore__train-icon" />
-                  )}
-                </div>
-                <p className="card-explore__station-details">
-                  Group: {station.people}/{station.max_group}
-                </p>
-              </div>
-            ))}
+      <div className="image-card__row image-card__row--bottom">
+        <div className="image-card__sub-row">
+          <h3 className="image-card__location">{imageCard.location}</h3>
+          <span
+            onClick={(event) => {
+              event.stopPropagation();
+              toggleLike();
+            }}
+            className="image-card__likes"
+          >
+            {liked ? (
+              <StarIcon className="image-card__icon image-card__icon--liked" />
+            ) : (
+              <StarIcon className="image-card__icon" />
+            )}
+          </span>
+        </div>
+        <div className="image-card__details">
+          <p className="image-card__description">
+            {imageCard.short_description.length > 40
+              ? `${imageCard.short_description.substring(0, 40)}...`
+              : imageCard.short_description}
+          </p>
+          <div className="image-card__community-profile">
+            <img
+              src={communityProfile}
+              alt="community profile icon"
+              className="image-card__community-profile-icon"
+            />
+            <p className="image-card__author">{imageCard.author}</p>
           </div>
+          <Link to={`/explore/${imageCard.id}`} className="image-card__more">
+            View more
+          </Link>
         </div>
       </div>
     </article>
