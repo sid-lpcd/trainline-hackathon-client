@@ -1,10 +1,10 @@
 import "./PaymentPage.scss";
-import paymentHeader from "../../assets/images/PaymentScreen/paymentHeader.jpeg";
-import brighton from "../../assets/images/PaymentScreen/paymentTicketBrighton.jpeg";
-import paris from "../../assets/images/PaymentScreen/paymentTicketParis.jpeg";
-import paymentOptions from "../../assets/images/PaymentScreen/paymentOptions.jpeg";
-import paymentAdvert from "../../assets/images/PaymentScreen/paymentAdvert.jpeg";
-import paymentCard from "../../assets/images/PaymentScreen/paymentCard.jpeg";
+import paymentHeader from "../../assets/images/PaymentScreen/PaymentHeader.jpeg";
+import brighton from "../../assets/images/PaymentScreen/PaymentTicketBrighton.jpeg";
+import paris from "../../assets/images/PaymentScreen/PaymentTicketParis.jpeg";
+import paymentOptions from "../../assets/images/PaymentScreen/PaymentOptions.jpeg";
+import paymentAdvert from "../../assets/images/PaymentScreen/PaymentAdvert.jpeg";
+import paymentCard from "../../assets/images/PaymentScreen/PaymentCard.jpeg";
 import friendsicon from "../../assets/icons/friends-icon.svg";
 import addIcon from "../../assets/icons/add-icon.svg";
 import { Link, useParams } from "react-router-dom";
