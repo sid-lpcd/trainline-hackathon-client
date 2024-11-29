@@ -30,7 +30,7 @@ const IndividualExplorePage = () => {
         <CardExplore imageCard={trip} isIndividual={true} />
         <CardJourney
           departure_name={"London Euston"}
-          arrival_name={"Edinburgh Waverley"}
+          arrival_name={"Edinburgh (Waverley)"}
           train_price={"£37"}
           coach_price={"£18"}
           travelId={1}
