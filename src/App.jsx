@@ -20,7 +20,12 @@ function App() {
           <Route path="/selection" element={<SelectionPage />} />
           <Route path="/payment/:location?" element={<PaymentPage />} />
           <Route path="/booking" element={<BookingConfirmation />} />
+<<<<<<< HEAD
+          <Route path="/tickets" element={<TicketPage />} />
+
+=======
           <Route path="/ticket" element={<TicketPage />} />
+>>>>>>> develop
           <Route path="/explore" element={<ExplorePage />} />
         </Routes>
       </div>
