@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/public/images/venice.png",
+    "location": "Venice, Italy",
+    "author": "Juan",
+    "short_description": "Visiting Venice was magical. Even alone, I loved it.",
+    "description": "Stroll through Venice's iconic canals and romantic atmosphere.",
+    "category": "Solo Travel",
+    "favourite": true
+  },
+  {
+    "id": 2,
+    "imageSrc": "/public/images/edinburgh.png",
+    "location": "Edinburgh, UK",
+    "author": "Viv",
+    "short_description": "Finally made it to Edinburgh, and it’s just as beautiful as I remember.",
+    "description": "Experience Edinburgh's historic castles and vibrant festivals.",
+    "category": "Social Travel",
+    "favourite": false
+  },
+  {
+    "id": 3,
+    "imageSrc": "/public/images/warsaw.png",
+    "location": "Warsaw, Poland",
+    "author": "Viv",
+    "short_description": "Exploring Poland was amazing—beautiful architecture and vibrant culture.",
+    "description": "Admire Warsaw’s rich history and cultural vibrancy.",
+    "category": "Couples",
+    "favourite": false
+  },
+  {
+    "id": 4,
+    "imageSrc": "/public/images/oslo.png",
+    "location": "Oslo, Norway",
+    "author": "Hans Müller",
+    "short_description": "Met some wonderful people in Oslo and had a great time.",
+    "description": "Explore Oslo's modern design and Nordic landscapes.",
+    "category": "Solo Travel",
+    "favourite": false
+  },
+  {
+    "id": 5,
+    "imageSrc": "https://www.agoda.com/wp-content/uploads/2024/04/Featured-image-Scenic-Prague-panorama-with-Hradcany-castle-and-Vltava-river-in-spring-Czech-Republic-1244x700.jpg",
+    "location": "Prague, Czech Republic",
+    "author": "Jan Novák",
+    "short_description": "Experience the magic of Prague’s Old Town.",
+    "description": "Wander through Prague's medieval streets and historic charm.",
+    "category": "Solo Travel",
+    "favourite": false
+  },
+  {
+    "id": 6,
+    "imageSrc": "https://statemag.state.gov/wp-content/uploads/2024/05/0624POM-A-3-scaled.jpg",
+    "location": "Barcelona, Spain",
+    "author": "Carlos García",
+    "short_description": "Admire Gaudi’s masterpieces and Mediterranean vibes.",
+    "description": "Immerse yourself in Barcelona's art, architecture, and beaches.",
+    "category": "Social Travel",
+    "favourite": false
+  },
+  {
+    "id": 7,
+    "imageSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f5/de/london.jpg?w=1400&h=1400&s=1",
+    "location": "London, England",
+    "author": "Emily Johnson",
+    "short_description": "Experience iconic landmarks and bustling streets.",
+    "description": "Discover London's famous sites and cultural landmarks.",
+    "category": "Family Travel",
+    "favourite": false
+  },
+  {
+    "id": 8,
+    "imageSrc": "https://www.holland.com/upload_mm/2/4/4/80160_fullimage_rondvaartboot%20vaart%20onder%20brug%20door%20met%20mooie%20wolkenlucht%20%C2%A9%20illusion-x%20via%20pixabay_1150x663_438x353.jpg",
+    "location": "Amsterdam, Netherlands",
+    "author": "Pieter de Vries",
+    "short_description": "Cycle through picturesque canals and tulip fields.",
+    "description": "Enjoy Amsterdam’s unique charm and artistic heritage.",
+    "category": "Solo Travel",
+    "favourite": false
+  },
+  {
+    "id": 9,
+    "imageSrc": "https://www.adventourely.com/wp-content/uploads/2023/11/Where-to-Stay-in-Vienna.jpg",
+    "location": "Vienna, Austria",
+    "author": "Anna Huber",
+    "short_description": "Uncover Vienna’s imperial elegance and classical music.",
+    "description": "Experience Vienna's grand palaces and musical traditions.",
+    "category": "Couples",
+    "favourite": false
+  }
+]
