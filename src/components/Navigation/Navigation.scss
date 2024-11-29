@@ -12,9 +12,20 @@
 
   &__item {
     text-align: center;
+    &--star {
+      & svg > * {
+        fill: none;
+        stroke: $primary-font-color;
+      }
+    }
     &--active {
       & svg > * {
         fill: $nav-active-color;
+      }
+
+      &.bottom-navigation__item--star svg > * {
+        fill: none;
+        stroke: $nav-active-color;
       }
 
       & > .bottom-navigation__label {
