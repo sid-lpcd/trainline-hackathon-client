@@ -1,12 +1,15 @@
 import "./PaymentPage.scss";
 import paymentHeader from "../../assets/images/PaymentScreen/paymentHeader.jpeg";
-import paymentTicket from "../../assets/images/PaymentScreen/paymentTicket.jpeg";
+import brighton from "../../assets/images/PaymentScreen/paymentTicketBrighton.jpeg";
+import paris from "../../assets/images/PaymentScreen/paymentTicketParis.jpeg";
 import paymentOptions from "../../assets/images/PaymentScreen/paymentOptions.jpeg";
 import paymentAdvert from "../../assets/images/PaymentScreen/paymentAdvert.jpeg";
 import paymentCard from "../../assets/images/PaymentScreen/paymentCard.jpeg";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function PaymentPage() {
+  const { location } = useParams();
   return (
     <>
       <header className="header">
@@ -19,8 +22,12 @@ function PaymentPage() {
       <main className="main">
         <img
           className="header__payment"
-          src={paymentTicket}
-          alt="payment page ticket template"
+          src={location === "paris" ? paris : brighton}
+          alt={
+            location === "paris"
+              ? "payment page ticket template for Paris"
+              : "payment page ticket template for Brighton"
+          }
         />
         <img
           className="header__payment"
